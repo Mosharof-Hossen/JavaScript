@@ -1,0 +1,6 @@
+console.log("Hello World")
+console.log("I love bangladesh")
+console.log("Age:"+22)
+console.log(65.5548)
+console.log(9+9)
+console.log("9"+9)
