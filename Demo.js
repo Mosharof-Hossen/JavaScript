@@ -1,6 +1,4 @@
-var name = "Mosharof hoosssen"
 
-var lng = 0
 
 while(true){
     if(name.charAt(lng)==""){
