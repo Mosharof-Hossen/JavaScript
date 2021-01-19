@@ -9,5 +9,17 @@ function sum(a,b){
     return a+b
 }
 
+
 res = simple(5,6,sum)
 console.log(res)
+
+var result = simple(5,6,function(c,d){
+    return c+d
+})
+console.log(result)
+
+var result2 = simple(5,6,function(c,d){
+    return c*d
+})
+
+console.log(result2)

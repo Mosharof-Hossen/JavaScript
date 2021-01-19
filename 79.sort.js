@@ -21,11 +21,11 @@ var person = [
     }
    
 ]
-// arr.sort()
-// console.log(arr)
+arr.sort()
+console.log(arr)
 
-// person.sort()
-// console.log(person)
+person.sort()
+console.log(person)
 
 arr.sort(function(a,b){
     if (a>b){

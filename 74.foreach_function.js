@@ -1,20 +1,38 @@
-var arr = [1,2,3,4,5]
+// var arr = [1,2,3,4,5]
+// var sum = 0
+// arr.forEach(function(value,index,arr){
+//     // console.log(value,index,arr)
+//     sum +=value
+// })
+// console.log(sum)
+
+
+// function forEach(arr,cb){
+//     for (var i = 0 ; i<arr.length ; i++){
+//         cb(arr[i],i,arr)
+//     }
+// }
+
+// forEach(arr,function cb(value ,index ,arr){
+//     console.log(value ,index,arr)
+//     sum += value
+// })
+// console.log(sum)
+
+var arr = [1,15,3,25,5]
 var sum = 0
-arr.forEach(function(value,index,arr){
-    // console.log(value,index,arr)
-    sum +=value
+arr.forEach(function(value ,index ,arr){
+    sum += value
+
 })
 console.log(sum)
-
-
-function forEach(arr,cb){
-    for (var i = 0 ; i<arr.length ; i++){
+var sum = 0
+function forEach(arr ,cb){
+    for (var i = 0;i<arr.length ;i++){
         cb(arr[i],i,arr)
     }
 }
-
-forEach(arr,function cb(value ,index ,arr){
-    console.log(value ,index,arr)
+forEach(arr,function(value,index,arr){
     sum += value
 })
 console.log(sum)

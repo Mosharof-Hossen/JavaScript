@@ -13,8 +13,14 @@ console.log(arr[0](9,8))
 // funtion can be strored in object
 
 var obj={
-    sum : add,
+    sum1 : add,
     abc : 10
 }
+console.log(obj)
+console.log(obj["sum1"](10,20))
 
-console.log(obj["sum"](10,20))
+// we can create Function as need
+
+setTimeout(function(){
+    console.log("Ki Vaiyaaaa")
+},1000)

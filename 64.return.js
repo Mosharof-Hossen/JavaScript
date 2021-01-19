@@ -3,7 +3,8 @@ function add(){
     for (i = 0;i<arguments.length ; i++){
         sum += arguments[i]
     }
-    return sum
+    var a = 5
+    return sum ,a
 }
 var res = add(1,2,3,4)
 console.log(res)
