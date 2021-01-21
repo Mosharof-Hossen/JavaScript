@@ -12,3 +12,4 @@ function currying(a){
 
 var res = currying(5)(5)(10)
 console.log(res)
+
