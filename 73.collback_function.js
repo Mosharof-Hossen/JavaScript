@@ -23,3 +23,22 @@ var result2 = simple(5,6,function(c,d){
 })
 
 console.log(result2)
+
+
+function explainCallback(namee ,age , task){
+    console.log("Hello "+namee);
+    console.log("Your Age ",age);
+    task()
+}
+function washHand(){
+    console.log("wash your hand");
+}
+function takeShower (){
+    console.log("Take Shower");
+}
+
+explainCallback("mosharof Hossen",5,washHand)
+explainCallback(`Jony`,6,takeShower)
+explainCallback(`Shihab`,45,function(){
+    console.log("Pungtami");
+})
