@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="myList">
+            <li id="first"  class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Numquam commodi dolor magnam modi.</li>
+            <li class="item">Est sunt nam eum nemo.</li>
+            <li class="item">Atque laudantium qui culpa nam?</li>
+            <li class="item">Eaque illo eum fugiat autem!</li>
+        </ul>
+        <button id="addNew">Add New Item</button>
+    </div>
+    <script>
+        // var items = document.getElementsByClassName("item")
+        // for (let i = 0; i < items.length; i++) {
+        //     const element = items[i];
+        //     element.addEventListener("click",function(event){
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+
+        document.getElementById("myList").addEventListener('click',function(even){
+            console.log(this,event.target);
+            even.target.parentNode.removeChild(event.target)
+            
+        })
+        document.getElementById("addNew").addEventListener("click",function(even){
+            var itemParent = document.getElementById("myList")
+            var newItem = document.createElement("li");
+            newItem.innerText = "Brand new item"
+            itemParent.appendChild(newItem)
+        })
+
+        // document.getElementById("container").addEventListener('click',function(even){
+        //     console.log("container item");
+            
+        // })
+        // document.getElementById("first").addEventListener('click',function(even){
+        //     console.log("first item");
+            
+        // })
+        // document.getElementById("myList").addEventListener('click',function(even){
+        //     console.log("Mylist item");
+        //     event.stopPropagation();
+        // })
+        // document.getElementById("addNew").addEventListener('click',function(even){
+        //     console.log("Button item");
+        // })
+    </script>
+</body>
+</html>

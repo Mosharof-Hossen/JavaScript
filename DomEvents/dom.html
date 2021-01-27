@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore DOM</title>
+    <style>
+        article{
+            border: 2px solid tomato;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>Exploring DOM</h3>
+        <article class="special">
+            <h3>article - 1</h3>
+            <p class="author">author-1</p>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sunt animi, soluta corrupti possimus illo dolorem. Odit ullam nisi ex, labore magni facilis in mollitia saepe, perspiciatis iste dolores cum!</p>
+        </article>
+        <article class="special">
+            <h3>article - 2</h3>
+            <p class="author">author-2</p>
+            <p class="description">Saepe consectetur laborum necessitatibus quod eveniet culpa iste laboriosam reprehenderit dolor? Impedit hic cumque deleniti, id facilis soluta praesentium voluptas recusandae ex. Officiis eligendi velit voluptates aliquam suscipit ut repellendus.</p>
+        </article>
+        <article>
+            <h3>article - 3</h3>
+            <p class="author">author-3</p>
+            <p class="description">Aliquam, unde et reiciendis nulla consequuntur illo aspernatur officiis perspiciatis mollitia quis inventore ipsam sunt, odio magnam laboriosam laudantium enim laborum corporis? Illum, repudiandae excepturi accusantium fugiat autem debitis expedita.</p>
+        </article>
+</main>
+    <script>
+        var authors = document.querySelectorAll(".special h3")
+        console.log(authors);
+        
+        for (var i = 0; i < authors.length ;i++){
+            var element = authors[i];
+            element.setAttribute("title","I am kichuina")
+            console.log(element.innerHTML)
+            element.innerHTML = "Lakhok-" + (i+1);
+            element.style.backgroundColor = "gray"
+            element.style.padding = "10px";
+        }
+    </script>
+</body>
+</html>

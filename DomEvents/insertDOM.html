@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore DOM</title>
+    <style>
+        article{
+            border: 2px solid tomato;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>Exploring DOM</h3>
+        <article class="special" id="first-article">
+            <h3>article - 1</h3>
+            <p class="author">author-1</p>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sunt animi, soluta corrupti possimus illo dolorem. Odit ullam nisi ex, labore magni facilis in mollitia saepe, perspiciatis iste dolores cum!</p>
+        </article>
+        <article class="special">
+            <h3>article - 2</h3>
+            <p class="author">author-2</p>
+            <p class="description">Saepe consectetur laborum necessitatibus quod eveniet culpa iste laboriosam reprehenderit dolor? Impedit hic cumque deleniti, id facilis soluta praesentium voluptas recusandae ex. Officiis eligendi velit voluptates aliquam suscipit ut repellendus.</p>
+        </article>
+        <article>
+            <h3>article - 3</h3>
+            <p class="author">author-3</p>
+            <p class="description">Aliquam, unde et reiciendis nulla consequuntur illo aspernatur officiis perspiciatis mollitia quis inventore ipsam sunt, odio magnam laboriosam laudantium enim laborum corporis? Illum, repudiandae excepturi accusantium fugiat autem debitis expedita.</p>
+        </article>
+        <article>
+            <h3>Grocery List</h3>
+            <ul id="gift list">
+                <li>gift - 1</li>
+                <li>gift - 2</li>
+                <li>gift - 3</li>
+                <li>gift - 4</li>
+                <li>gift - 5</li>
+            </ul>
+        </article>
+</main>
+    <script>
+        const article = document.getElementById("first-article");
+        const newParagraph =document.createElement("p");
+        newParagraph.innerHTML = "This is adder by JavaScript";
+        article.appendChild(newParagraph);
+
+        // add list
+        const ul =document.getElementById("gift list")
+        const li = document.createElement("li")
+        li.innerHTML = "Brand new Gift";
+        ul.appendChild(li);
+    </script>
+</body>
+</html>
