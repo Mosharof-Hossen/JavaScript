@@ -17,3 +17,4 @@ console.log(a.toUpperCase())
 console.log(c.toLowerCase())
 console.log("  fdkjfskldjf  fkdfj   fkjd   ".trim())
 console.log(c.split(" "))
+console.log(b.replace(b.slice(-3,-2),""));

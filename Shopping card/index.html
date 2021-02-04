@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="minusBtn"class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="minusBtn" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="inputValue" type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"  id="plusBtn"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default" id="plusBtn"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$ <span id="iphoneValue">1000</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -45,7 +45,7 @@
                         <div class="input-group number-spinner">
                            <button id="minusBtn2" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="inputValue2" type="text" class="form-control text-center" value="1">
-                           <button  class="btn btn-default" id="plusBtn2"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default" id="plusBtn2"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$ <span id="iphoneValue2">50</span></h5>
@@ -59,14 +59,14 @@
 
                      <div class="col-md-8">
                         <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
+                        <h5>Tax:(5%)</h5>
                         <h5>Total:</h5>
                      </div>
 
                      <div class="col-md-4 status">
                         <h5>$ <span id="subtotal">1050</span></h5>
-                        <h5>$0</h5>
-                        <h5>$ <span id="total">1050</span></h5>
+                        <h5 id="tax">$52</h5>
+                        <h5>$ <span id="total">1102.5</span></h5>
                      </div>
                   </div>
                </div>
@@ -79,50 +79,61 @@
    </section>
 </body>
 <script>
-    let plusBtn = document.getElementById("plusBtn")
-    let plusBtn2 = document.getElementById("plusBtn2")
-    let minusBtn = document.getElementById("minusBtn")
-    let minusBtn2 = document.getElementById("minusBtn2")
-    let count = 1
-    let count2 = 1
-    let totalPrice = 1050
-    let mark = 1
-    
-    plusBtn.addEventListener("click",function(event){
-        
-        (count++)
-        incriment("inputValue",count,"iphoneValue",1000) 
-        cost("total")
-        cost("subtotal")
-        })
-    plusBtn2.addEventListener("click",function(){
-        (count2++)
-        incriment("inputValue2",count2,"iphoneValue2",50) 
-        cost("total")
-        cost("subtotal")
-    })
-    minusBtn.addEventListener("click",function(){
-        --count
-        incriment("inputValue",count,"iphoneValue",1000)
-        cost("total")
-        cost("subtotal")
-    })
-    minusBtn2.addEventListener("click",function(){
-        --count2
-        incriment("inputValue2",count2,"iphoneValue2",50)
-        cost("total")
-        cost("subtotal")
-    })
-    function incriment (positiveSign , count ,value,price){
-        let inputValue = document.getElementById(positiveSign).value       
-        document.getElementById(positiveSign).setAttribute("value",count)
-        price = count * price
-        document.getElementById(value).innerText = price
-    }
-    function cost(total){
-        document.getElementById(total).innerText =("value", parseFloat(document.getElementById("iphoneValue").innerText) + parseFloat(document.getElementById("iphoneValue2").innerText))
-   
-    }
-    </script>
+   let plusBtn = document.getElementById("plusBtn")
+   let plusBtn2 = document.getElementById("plusBtn2")
+   let minusBtn = document.getElementById("minusBtn")
+   let minusBtn2 = document.getElementById("minusBtn2")
+   let count = 1
+   let count2 = 1
+   let totalPrice = 1050
+   let mark = 1
+
+   plusBtn.addEventListener("click", function (event) {
+
+      (count++)
+      incriment("inputValue", count, "iphoneValue", 1000)
+      total("total")
+      cost("subtotal")
+   })
+   plusBtn2.addEventListener("click", function () {
+      (count2++)
+      incriment("inputValue2", count2, "iphoneValue2", 50)
+      total("total")
+      cost("subtotal")
+   })
+   minusBtn.addEventListener("click", function () {
+
+      if (count > 0) {
+         --count
+         incriment("inputValue", count, "iphoneValue", 1000)
+         total("total")
+         cost("subtotal")
+      }
+   })
+   minusBtn2.addEventListener("click", function () {
+      if (count2 > 0) {
+         --count2
+         incriment("inputValue2", count2, "iphoneValue2", 50)
+         total("total")
+         cost("subtotal")
+      }
+   })
+   function incriment(positiveSign, count, value, price) {
+      let inputValue = document.getElementById(positiveSign).value
+      document.getElementById(positiveSign).setAttribute("value", count)
+      price = count * price
+      document.getElementById(value).innerText = price
+   }
+   function cost(total) {
+      document.getElementById(total).innerText = ("value", parseFloat(document.getElementById("iphoneValue").innerText) + parseFloat(document.getElementById("iphoneValue2").innerText))
+   }
+   function total(total) {
+      let totalWithoutTax = ("value", parseFloat(document.getElementById("iphoneValue").innerText) + parseFloat(document.getElementById("iphoneValue2").innerText))
+      let tax = totalWithoutTax * .05
+      document.getElementById("tax").innerText = "$" + tax
+      document.getElementById(total).innerText = ("value", parseFloat(document.getElementById("iphoneValue").innerText) + parseFloat(document.getElementById("iphoneValue2").innerText)) + tax
+   }
+
+</script>
 
 </html>
