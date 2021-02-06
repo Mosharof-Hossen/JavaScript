@@ -18,7 +18,7 @@ rect.draw()
 
 // ******************************   109.this in java script
 
-/*
+
 function def(){
     console.log(this)
 }
@@ -40,7 +40,7 @@ rect.draw()
 rect.width = 150
 rect.draw()
 
-*/
+
 
 // ****************************** 110.Factory pattern
 /*
@@ -86,17 +86,16 @@ rect1.draw()
 */
 
 // ************************* 116.Bind Call Apply
-/*
+
 function myFunc(c,d){
     console.log(this)
-    console.log(this.a + this.b )
+    console.log(this.a + this.b +c+d)
 }
 
 myFunc.call({a:40,b:50},5,3)
 myFunc.apply({a:40,b:50},[5,4])
-var test = myFunc.call({a:40,b:50},5,5)
+var test = myFunc.bind({a:40,b:50},5,5)
 test()
-*/
 
 //* ************************* 119.private property
 /*
@@ -172,33 +171,34 @@ for (var i in sqr1){
 }
 */
 //   ****************** 130. First Prototypical in js
-function Shape(){
+// function Shape(){
 
-}
-Shape.prototype.common = function(){
-        console.log("I am common Method")
-    }
+// }
+// Shape.prototype.common = function(){
+//         console.log("I am common Method")
+//     }
 
 
 
-function Square(width){
-    this.width = width
+// function Square(width){
+//     this.width = width
 
-}
-Square.prototype = Object.create(Shape.prototype)
-Square.prototype.constructor = Square
+// }
+// Square.prototype = Object.create(Shape.prototype)
+// Square.prototype.constructor = Square
 
-Square.prototype.draw = function(){
-        console.log("Im Drowing",this.width)
-}
-function Circle(){
+// Square.prototype.draw = function(){
+//         console.log("Im Drowing",this.width)
+// }
+// function Circle(){
 
-}
-Circle.prototype = Object.create(Shape.prototype)
+// }
+// Circle.prototype = Object.create(Shape.prototype)
 
-var shape = new Shape()
-var sqr = new Square(45)
-var cir = new Circle()
+// var shape = new Shape()
+// var sqr = new Square(45)
+// var cir = new Circle()
+
 //  shape > Shape > Object
 //  sqr > Square > Object
 //  we want : sqr > Square >Shape > Object

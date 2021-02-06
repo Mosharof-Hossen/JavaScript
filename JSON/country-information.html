@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 30% 70%;
+            
+        }
+        .country-name{
+            background-color: aqua;
+            height: 100%;
+        }
+        #list{
+            cursor: pointer;
+            line-height: 25px;
+        }
+        #details {
+            background: #D6ED17FF;
+            color: #606060FF;
+            height: 616px;
+            position: sticky;
+            top: 0px;
+            display: grid;
+            grid-template-rows: 250px 366px;
+        }
+        #flagImg{
+            width: 250px;
+            padding: 20px;
+            background: #ffffff63;
+            border-radius: 5px;
+        }
+        #Country-Flag{
+            margin: auto;
+        }
+        #Country-Details {
+            display: inline-block;
+            padding: 0px 28px;
+            line-height: 9px;
+            background: #ffffff69;
+            margin: 0px 27px;
+            width: 82%;
+            margin-top: -17px;
+            border-radius: 10px;
+        }
+
+        #Country-Name {
+            text-align: center;
+            margin-top: 0px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="country-name">
+            <ul id="list">
+
+            </ul>
+        </div>
+        <div id="details">
+            <div id="Country-Flag">
+                <img id="flagImg" src="https://restcountries.eu/data/afg.svg" alt="">
+            </div>
+            <div id="Country-Details-Container">
+                <h1 id="Country-Name">Afghanistan</h1>
+                <div id="Country-Details">
+                    <p >Native Name: <span id="Native-Name"
+                            class="Details-Span">افغانستان</span></p>
+                    
+                    <p >Capital: <span id="Capital" class="Details-Span">Kabul</span></p>
+                    <p >Area: <span id="Area" class="Details-Span">652230</span></p>
+                    <p >Languages: <span id="Languages"
+                            class="Details-Span">Pashto,Uzbek,Turkmen</span></p>
+                    <p >Population: <span id="Population" class="Details-Span">27657145</span>
+                    </p>
+                    <p >Region: <span id="Region" class="Details-Span">Asia</span></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+
+        
+
+    </script>
+    <script src="country-information.js"></script>
+</body>
+</html>
