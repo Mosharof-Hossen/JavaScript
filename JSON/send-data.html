@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JSON</h1>
+    <h2>JavaScript Object Notation</h2>
+    <ul id="users-containaier">
+
+    </ul>
+    <input type="text" name="" id="title" placeholder="title">
+    <br><br>
+    <input type="text" name="" id="content" placeholder="content"><br><br>
+    <button id="submit">Submit</button>
+<script>
+        // const postInfo = {
+        //     Id: 19,
+        //     name: "Mosharof",
+        //     age: 22,
+        //     university: "HSTU",
+        //     country: "Bangladesh",
+        //     PostNumber: 11
+        // }
+        document.getElementById("submit").addEventListener("click",function(){
+            let object = {}
+            let title = document.getElementById("title").value
+            let content  = document.getElementById("content").value
+            object.title = title
+            object.content = content
+            console.log(object);
+            postToServer(object)
+
+        })
+        function postToServer(postInfo){
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(postInfo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+        }
+        
+
+        // function displayUser(users) {
+        //     const userName = users.map(user => user.name)
+        //     let ul = document.getElementById("users-containaier")
+
+        //     for (let i = 0; i < userName.length; i++) {
+        //         let li = document.createElement("li")
+        //         li.innerHTML = userName[i];
+        //         ul.appendChild(li);
+        //     }
+
+        // }
+
+    </script>
+</body>
+
+</html>
